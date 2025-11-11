@@ -92,6 +92,13 @@ svg {
   margin-bottom: 15px;
 }
 
+
+.menu-item .icon,
+.menu-item .icon + div {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .dashboard-home svg {
   width: 40px;
 }
