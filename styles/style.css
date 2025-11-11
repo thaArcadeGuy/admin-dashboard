@@ -1,3 +1,292 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
 svg {
-  fill: aqua;
+  width: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-auto-flow: row;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: #1992D4;
+  color: white;
+  padding: 15px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.sidebar svg {
+  fill: white;
+  width: 25px;
+}
+
+.menu-item,
+.dashboard-home {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.menu-item {
+  margin-bottom: 15px;
+}
+
+.dashboard-home svg {
+  width: 40px;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 2;
+  gap: 20px;
+  padding: 15px 20px;
+  align-content: start;
+  box-shadow: 2px 2px 4px #d9d8d8;
+}
+
+.main-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+}
+
+form,
+.header-profile {
+  display: flex;
+  align-items: center;
+}
+
+.header-profile {
+  gap: 20px;
+}
+
+
+form button {
+  background: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+input {
+  width: 100%;
+  margin-left: 10px;
+  border: none;
+  background: #e2e8f0;
+  border-radius: 50px;
+  max-width: 600px;
+  min-width: 200px;
+  padding: 8px 16px;
+}
+
+input:focus,
+input:active {
+  outline: none;
+}
+
+.header svg {
+  width: 25px;
+}
+
+.image,
+.user-img {
+  width: 45px;
+  height: 45px;
+}
+
+.image img,
+.user-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-profile,
+.buttons {
+  justify-self: end;
+}
+
+.header-profile .image {
+  width: 35px;
+  height: 35px;
+}
+
+.user-name,
+.user-handle {
+  font-weight: 700;
+}
+
+.user-name {
+  font-size: 0.8rem
+}
+
+.user-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.greeting {
+  font-size: 0.6rem;
+}
+
+.buttons button {
+  border: none;
+  border-radius: 30px;
+  background: #1992D4;
+  color: white;
+  padding: 6px 25px;
+  margin-left: 15px;
+  font-size: 0.8rem;
+}
+
+.main-content {
+  background: #E2E8F0;
+  padding: 20px;
+  grid-column:2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 25px 20px;
+  color: #7B7B7B;
+}
+
+h2, 
+h3,
+.user-handle p:nth-child(1) {
+  color: black
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.projects {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3
+}
+
+.announcements {
+
+}
+
+.trending {
+  grid-column: 3 / 4;
+
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card,
+.announcement-cards,
+.trend-profiles-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 2px 2px 4px #d9d8d8;
+}
+
+.announcement-card:nth-child(2) {
+  border-block: 1px solid #7B7B7B;
+  padding-block: 20px;
+}
+
+.card {
+  border-left: 8px solid #F0B429;
+  height: 14.375rem;
+
+}
+
+.card-icons {
+  display: flex;
+  gap: 15px;
+  align-self: end;
+}
+
+.card-icon svg {
+  width: 20px
+}
+
+.trending-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.8rem;
 }
